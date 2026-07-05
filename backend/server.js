@@ -16,7 +16,10 @@ const app = express();
 app.use(helmet({ crossOriginResourcePolicy: false }));
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: [
+      "http://localhost:5173",
+      "https://expense-tracker-gamma-one-68.vercel.app",
+    ],
     credentials: true,
   })
 );
