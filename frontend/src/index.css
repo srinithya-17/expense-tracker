@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ink-200 dark:border-ink-700;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body bg-ink-50 dark:bg-ink-950 text-ink-800 dark:text-ink-100 antialiased transition-colors duration-300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-primary-300/50;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-300 dark:bg-ink-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-400 dark:bg-ink-600;
+  }
+  /* Visible keyboard focus */
+  :focus-visible {
+    outline: 2px solid #6C5CE7;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 dark:bg-ink-900/60 backdrop-blur-xl border border-white/60 dark:border-white/5 shadow-glass dark:shadow-glass-dark rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-600 hover:shadow-glow active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-800 px-4 py-2.5 text-sm font-semibold text-ink-700 dark:text-ink-200 transition-all duration-200 hover:bg-ink-50 dark:hover:bg-ink-700 active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-coral-500 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-coral-600 active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-800/60 px-4 py-2.5 text-sm text-ink-800 dark:text-ink-100 placeholder:text-ink-400 outline-none transition-all duration-200 focus:border-primary-400 focus:ring-4 focus:ring-primary-500/10;
+  }
+
+  .label-text {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-500 dark:text-ink-400;
+  }
+
+  .stat-number {
+    @apply font-mono font-semibold tabular-nums;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-ink-900 dark:text-white;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-ink-500 dark:text-ink-400 mt-1;
+  }
+}
